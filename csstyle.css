@@ -1,166 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* style.css */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d;
-    color: #fff;
-    position: relative;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: sans-serif;
+    margin: 0; /* Remove default margins */
+    overflow: hidden; /* Prevent scrollbars on enter screen */
 }
 
-body::before {
-    content: '';
-    background: url('b.jpg') no-repeat center center/cover; /* Add your local image here */
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-.glass-box {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px) saturate(150%);
-    -webkit-backdrop-filter: blur(10px) saturate(150%);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.hero {
-    height: 100vh;
+#enter-screen {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
 }
 
-.hero-content {
-    text-align: center;
-    animation: fadeIn 2s ease;
-}
-
-.hero h1 {
-    font-size: 60px;
-    font-weight: 700;
-    color: #f4f4f4;
-    opacity: 0;  
-    animation: slowFadeIn 5s ease forwards;  
-}
-
-.hero p {
-    font-size: 24px;
-    margin: 20px 0;
-    font-weight: 300;
-}
-
-.hero .btn {
-    padding: 10px 30px;
-    font-size: 18px;
-    background-color: #e63946;
+#enter-button {
+    background-color: #333; /* Darker button background */
     color: #fff;
-    text-decoration: none;
+    padding: 15px 30px;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.hero .btn:hover {
-    background-color: #d62828;
+#enter-button:hover {
+    background-color: #555; /* Darker hover background */
 }
 
-section {
-    padding: 50px 0;
+#resume-content {
+    /* Your resume content styles will go here */
+    padding: 20px; /* Add some padding */
+    /* Add more styles for different sections like name, experience, projects, etc. */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Example animation (you can add many more) */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
 }
 
-h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #e63946;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.skills-grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.skill {
-    flex-basis: 30%;
-    text-align: center;
-}
-
-.experience-timeline {
-    margin-top: 30px;
-}
-
-.projects-grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Contact Section */
-#contact {
-    text-align: center;
-}
-
-#contact a {
-    color: #e63946;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #0d0d0d;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 16px;
-    color: #999;
-}
-
-/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slowFadeIn {
-    0% {
+    from {
         opacity: 0;
-        transform: translateY(-20px); /* Slight upward movement */
     }
-    100% {
+    to {
         opacity: 1;
-        transform: translateY(0);
     }
+}
+
+/* Example styling for a section */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
