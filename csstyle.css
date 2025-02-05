@@ -1,10 +1,11 @@
 /* style.css */
 body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    font-family: sans-serif;
-    margin: 0; /* Remove default margins */
-    overflow: hidden; /* Prevent scrollbars on enter screen */
+    /* A smooth gradient background for extra vibes */
+    background: linear-gradient(135deg, #000, #333);
+    color: #fff;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 #enter-screen {
@@ -13,34 +14,32 @@ body {
     align-items: center;
     height: 100vh; /* Full viewport height */
     width: 100vw; /* Full viewport width */
+    animation: fadeIn 1s ease-in-out; /* Fade in on load */
 }
 
 #enter-button {
-    background-color: #333; /* Darker button background */
+    background-color: #444;
     color: #fff;
     padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly more rounded */
     font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 #enter-button:hover {
-    background-color: #555; /* Darker hover background */
+    background-color: #666;
+    transform: scale(1.05); /* Pop effect on hover */
 }
 
 #resume-content {
-    /* Your resume content styles will go here */
-    padding: 20px; /* Add some padding */
-    /* Add more styles for different sections like name, experience, projects, etc. */
-}
-
-/* Example animation (you can add many more) */
-.fade-in {
+    /* Resume content area with subtle animation */
+    padding: 20px;
     animation: fadeIn 1s ease-in-out;
 }
 
+/* Animation keyframes */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -50,12 +49,33 @@ body {
     }
 }
 
-/* Example styling for a section */
+/* Section styling for organized content */
 .section {
     margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #555; /* Light divider for sections */
 }
 
 .section-title {
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    #enter-button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+    .section-title {
+        font-size: 20px;
+    }
+    #resume-content {
+        padding: 15px;
+    }
+}
+
+/* Extra: Smooth scroll for in-page navigation */
+html {
+    scroll-behavior: smooth;
 }
